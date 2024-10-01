@@ -63,15 +63,35 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Admin Portal"),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                //app bar colors
+                Colors.purpleAccent,
+                Colors.cyanAccent,
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+        ),
+        title: const Text(
+          "Admin Web Portal",
+          style: TextStyle(
+            color: Colors.white, //appbar text color
+          ),
+        ),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Text(
-                "$currentTime \n$currentDate",
+                "$currentTime \n$currentDate", //displaying current date and time
                 style: const TextStyle(
                   fontSize: 20,
                   letterSpacing: 3,
@@ -79,7 +99,150 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ) 
+            ),
+            const SizedBox(height: 30),
+            //user activate and block accounts ui
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //activate
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purpleAccent,
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  icon: const Icon(
+                    Icons.person_add,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    'Activate User Accounts',
+                    style: TextStyle(
+                        fontSize: 20, letterSpacing: 2, color: Colors.white),
+                  ),
+                ),
+                //block
+                const SizedBox(width: 10),
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.redAccent[400],
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  icon: const Icon(
+                    Icons.block_outlined,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    'Block User Accounts',
+                    style: TextStyle(
+                        fontSize: 20, letterSpacing: 2, color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 20),
+            //Sellers activate and block accounts ui
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //activate
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purpleAccent,
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  icon: const Icon(
+                    Icons.person_add,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    'Activate Sellers',
+                    style: TextStyle(
+                        fontSize: 20, letterSpacing: 2, color: Colors.white),
+                  ),
+                ),
+                //block
+                const SizedBox(width: 10),
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.redAccent[400],
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  icon: const Icon(
+                    Icons.block_outlined,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    'Block Sellers',
+                    style: TextStyle(
+                        fontSize: 20, letterSpacing: 2, color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 20),
+            //Riders activate and block accounts ui
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //activate
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purpleAccent,
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  icon: const Icon(
+                    Icons.person_add,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    'Activate Riders',
+                    style: TextStyle(
+                        fontSize: 20, letterSpacing: 2, color: Colors.white),
+                  ),
+                ),
+                //block
+                const SizedBox(width: 10),
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.redAccent[400],
+                    padding: const EdgeInsets.all(20),
+                  ),
+                  icon: const Icon(
+                    Icons.block_outlined,
+                    color: Colors.white,
+                  ),
+                  label: const Text(
+                    'Block Riders',
+                    style: TextStyle(
+                        fontSize: 20, letterSpacing: 2, color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(20),
+                backgroundColor: Colors.cyanAccent[400],
+              ),
+              icon: const Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
+              label: const Text(
+                'Log Out',
+                style: TextStyle(
+                    fontSize: 20, letterSpacing: 2, color: Colors.white),
+              ),
+            )
           ],
         ),
       ),
